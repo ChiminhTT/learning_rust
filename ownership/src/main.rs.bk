@@ -1,0 +1,9 @@
+fn main() {
+    // Move semantics
+    let v = vec![1, 2, 3];
+    let v2 = v;
+    
+    // Copy type 
+    let v=1;
+    let v2=v;
+}
