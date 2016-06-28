@@ -26,8 +26,8 @@ impl<T> Rectangle<T> {
         self.height = height;
     }
 
-    pub fn get_position(&self) -> (&T, &T) {
-        (&self.x, &self.y)
+    pub fn get_position(self) -> (T, T) {
+        (self.x, self.y)
     }
 
     pub fn get_dimensions(&self) -> (&T, &T) {

@@ -1,0 +1,33 @@
+fn main() {
+    let x = 5u8;
+    let y = "Hello".to_string();
+
+    do_something(x);
+    do_something(y);
+
+    do_something_else(&x as &Foo);
+}
+
+trait Foo {
+    fn method(&self) -> String;
+}
+
+impl Foo for u8 {
+    fn method(&self) -> String {
+        format!("u8: {}", *self)}
+}
+
+impl Foo for String {
+    fn method(&self) -> String {
+        format!("sting: {}", *self)
+    }
+}
+
+fn do_something<T: Foo>(x: T) {
+    x.method();
+}
+
+fn do_something_else(x: &Foo) {
+    x.method();
+    println!("This is a test.");
+}
